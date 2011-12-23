@@ -1,0 +1,27 @@
+{
+    "name": "Suppenloeffel",
+    "version": "0.1",
+    "description": "flip through your soup",
+    "background_page": "background.html",
+    "page_action" :
+    {
+        "default_icon" : "soup.png",
+        "default_title" : "suppenloeffel"  ,
+        "popup": "popup.html"
+    },
+    "permissions" : [
+        "tabs",
+        "http://*.soup.io/*"
+    ],
+    "icons" : {
+        "48" : "soup.png",
+        "128" : "soup.png"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-inline",
+    "content_scripts": [
+        {
+            "matches": ["http://*.soup.io/*"],
+            "js": ["jquery1.7.1.js", "content.js"]
+        }
+    ]
+}
