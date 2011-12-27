@@ -49,5 +49,12 @@ function next(back) {
         $(".post").css("visibility", "hidden");
         $next.css("visibility", "visible");
         $(window).scrollTop($next.position().top);
+        var $image = $next.find(".content").find("img");
+        if($image.size() > 0){
+            var src = $image.attr("src");
+            if(src.match("gif$")){
+                $image.attr("src", src);
+            }
+        }
     }
 }
